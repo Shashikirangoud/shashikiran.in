@@ -23,14 +23,14 @@
   --bg:#0F1A18;--surface:#16231F;--ink:#E4EFEC;--muted:#9DB3AD;--line:#2B3F3A;
   --m1:#4FC6B7;--m2:#E9A93A;--m3:#7FA2F5;--m4:#A38DFF;--on-accent:#0F1A18;color-scheme:dark;
 }
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+html{scroll-padding-top:7rem;scroll-behavior:smooth}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
 h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0}
 a{color:inherit}
 a:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--m3);outline-offset:3px;border-radius:4px}
 .wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
-header.top{padding:1.25rem 0;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-weight:600}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);box-shadow:0 1px 0 var(--line);padding:1.25rem 0;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-weight:600}
 header.top nav{display:flex;gap:1.25rem;flex-wrap:wrap}
 header.top a{text-decoration:none;color:var(--muted)}
 header.top a:hover{color:var(--ink)}
@@ -177,7 +177,7 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px sol
     <p>Hiring for ML data operations, data QA, or Computer Vision? Send me a message.</p>
     <div class="btns">
       <a class="btn fill" href="mailto:shashikirangoud.ayili@gmail.com">shashikirangoud.ayili@gmail.com</a>
-      <a class="btn" href="https://www.linkedin.com/in/ayili"> Linkedin </a>
+      <a class="btn" href="https://www.linkedin.com/in/ayili">Linkedin</a>
     </div>
   </section>
   </main>
