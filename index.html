@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayili Shashikiran | Computer Vision &amp; ML Data Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF1EF;--surface:#FFFFFF;--ink:#12302B;--muted:#4C625D;--line:#C9D6D2;
+  --m1:#1F8F82;--m2:#C98512;--m3:#3B64C9;--m4:#7455E0;--on-accent:#FFFFFF;
+  color-scheme:light;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1A18;--surface:#16231F;--ink:#E4EFEC;--muted:#9DB3AD;--line:#2B3F3A;
+    --m1:#4FC6B7;--m2:#E9A93A;--m3:#7FA2F5;--m4:#A38DFF;--on-accent:#0F1A18;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1A18;--surface:#16231F;--ink:#E4EFEC;--muted:#9DB3AD;--line:#2B3F3A;
+  --m1:#4FC6B7;--m2:#E9A93A;--m3:#7FA2F5;--m4:#A38DFF;--on-accent:#0F1A18;color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+a:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--m3);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+header.top{padding:1.25rem 0;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-weight:600}
+header.top nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+header.top a{text-decoration:none;color:var(--muted)}
+header.top a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 4rem}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:700;letter-spacing:-.03em}
+.hero .role{font-size:1.25rem;font-weight:600;margin:1rem 0 .75rem;color:var(--m1)}
+.hero p{color:var(--muted);max-width:34rem;margin:0 0 1.5rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.25rem;border-radius:.6rem;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.fill{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+figure{margin:0}
+.scene{width:100%;height:auto;display:block;background:var(--surface);border:1px solid var(--line);border-radius:1rem}
+.scene .mask{fill-opacity:.38;stroke-width:2;cursor:pointer;transition:fill-opacity .15s}
+.scene g:hover .mask,.scene g:focus-visible .mask{fill-opacity:.8}
+.scene .tag{opacity:0;transition:opacity .15s;font:600 13px Figtree,system-ui,sans-serif}
+.scene g:hover .tag,.scene g:focus-visible .tag{opacity:1}
+.scene .tagbg{opacity:0;transition:opacity .15s}
+.scene g:hover .tagbg,.scene g:focus-visible .tagbg{opacity:1}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1.5rem}
+.about{max-width:42rem}
+.about p{margin:0 0 1rem}
+.job{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--m1);border-radius:.8rem;padding:1.5rem}
+.job h3{font-size:1.4rem}
+.job .meta{color:var(--muted);margin:.25rem 0 1rem}
+.job ul{margin:0;padding-left:1.2rem}
+.job li{margin-bottom:.55rem}
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem}
+.work article{background:var(--surface);border:1px solid var(--line);border-radius:.8rem;padding:1.25rem;border-top:6px solid var(--c)}
+.work h3{font-size:1.2rem;margin-bottom:.5rem}
+.work p{margin:0;color:var(--muted);font-size:1rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem}
+.skills h3{font-size:1.1rem;margin-bottom:.6rem}
+.skills ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
+.skills li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:.25rem .8rem;font-size:.95rem}
+.contact p{max-width:34rem;color:var(--muted);margin:0 0 1.25rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:760px){.hero{grid-template-columns:1fr;gap:2rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <strong>Ayili Shashikiran</strong>
+    <nav aria-label="Sections"><a href="#experience">Experience</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+  <div class="hero">
+    <div>
+      <h1>Ayili Shashikiran</h1>
+      <div class="role">Computer Vision &amp; ML Data Specialist</div>
+      <p>I validate datasets, test ML pipelines, and work with segmentation and detection models so the data behind a model is accurate, consistent, and ready to train on.</p>
+      <div class="btns">
+        <a class="btn fill" href="mailto:shashikirangoud.ayili@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/ayili">View LinkedIn</a>
+      </div>
+    </div>
+    <figure>
+      <svg class="scene" viewBox="0 0 520 340" role="img" aria-label="Illustration of a construction site with colored segmentation masks over the slab, columns, crane, and ground">
+        <rect width="520" height="340" fill="none"/>
+        <g tabindex="0" aria-label="Ground mask">
+          <rect class="mask" x="10" y="268" width="500" height="62" rx="6" fill="var(--m4)" stroke="var(--m4)"/>
+          <rect class="tagbg" x="20" y="276" width="62" height="22" rx="5" fill="var(--m4)"/>
+          <text class="tag" x="29" y="292" fill="var(--on-accent)">Ground</text>
+        </g>
+        <g tabindex="0" aria-label="Columns mask">
+          <rect class="mask" x="70" y="110" width="24" height="158" fill="var(--m2)" stroke="var(--m2)"/>
+          <rect class="mask" x="190" y="110" width="24" height="158" fill="var(--m2)" stroke="var(--m2)"/>
+          <rect class="mask" x="310" y="110" width="24" height="158" fill="var(--m2)" stroke="var(--m2)"/>
+          <rect class="tagbg" x="104" y="190" width="68" height="22" rx="5" fill="var(--m2)"/>
+          <text class="tag" x="112" y="206" fill="var(--on-accent)">Columns</text>
+        </g>
+        <g tabindex="0" aria-label="Slab mask">
+          <rect class="mask" x="50" y="100" width="300" height="14" fill="var(--m1)" stroke="var(--m1)"/>
+          <rect class="mask" x="50" y="180" width="300" height="14" fill="var(--m1)" stroke="var(--m1)"/>
+          <rect class="mask" x="50" y="258" width="300" height="10" fill="var(--m1)" stroke="var(--m1)"/>
+          <rect class="tagbg" x="226" y="126" width="48" height="22" rx="5" fill="var(--m1)"/>
+          <text class="tag" x="234" y="142" fill="var(--on-accent)">Slab</text>
+        </g>
+        <g tabindex="0" aria-label="Crane mask">
+          <path class="mask" d="M430 268 V40 H300 V54 H416 V268 Z" fill="var(--m3)" stroke="var(--m3)"/>
+          <path class="mask" d="M416 40 L470 40 V54 H416 Z" fill="var(--m3)" stroke="var(--m3)"/>
+          <rect class="tagbg" x="440" y="130" width="52" height="22" rx="5" fill="var(--m3)"/>
+          <text class="tag" x="448" y="146" fill="var(--on-accent)">Crane</text>
+        </g>
+      </svg>
+      <figcaption>Hover or focus a region. This is the kind of segmentation data I validate.</figcaption>
+    </figure>
+  </div>
+
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>I work on the data side of Computer Vision. At Track3D I collect and validate image and video datasets, train and validate models, and check pipelines and new deployments so problems are found before they reach training.</p>
+    <p>I like clear guidelines, careful checks, and tracing an error back to where it started. I am looking for roles in ML data operations, data quality, annotation QA, and Computer Vision.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="job">
+      <h3>Machine Learning Support Engineer</h3>
+      <div class="meta">Track3D (formerly ConstructN) · Hyderabad, India · January 2024 to present</div>
+      <ul>
+        <li>Worked as an internal lead for one year, taking ownership of data quality checks and communicating issues to ML developers.</li>
+        <li>Validated image and video datasets for accuracy, consistency, and completeness before model training and testing.</li>
+        <li>Trained and validated SAM2 segmentation models for construction-site categories and stages.</li>
+        <li>Prepared datasets, trained and validated YOLOv8 models, and integrated model weights.</li>
+        <li>Tested ML pipelines and new deployments, found data and processing issues, and verified output quality.</li>
+        <li>Managed datasets, model outputs, and trained weights in AWS S3.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2>What I work on</h2>
+    <div class="work">
+      <article style="--c:var(--m1)"><h3>Segmentation with SAM2</h3><p>Training and validating models for construction-site categories and stages, and using results to improve the dataset.</p></article>
+      <article style="--c:var(--m2)"><h3>Detection with YOLOv8</h3><p>Dataset preparation, model training, validation, and weight integration for Computer Vision workflows.</p></article>
+      <article style="--c:var(--m3)"><h3>Pipeline and deployment testing</h3><p>Checking new deployments and ML pipelines for data and processing issues, and confirming outputs are correct.</p></article>
+      <article style="--c:var(--m4)"><h3>Dataset validation and annotation QA</h3><p>Reviewing data for accuracy, consistency, and completeness so models train on clean inputs.</p></article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Data quality</h3><ul><li>Dataset validation</li><li>Annotation QA</li><li>Data cleaning</li><li>Root cause investigation</li></ul></div>
+      <div><h3>Computer Vision</h3><ul><li>Image segmentation</li><li>Object detection</li><li>YOLOv8</li><li>SAM2</li><li>Model validation</li></ul></div>
+      <div><h3>ML operations</h3><ul><li>ML pipeline testing</li><li>Deployment testing</li><li>AWS S3</li><li>Data tagging</li></ul></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>B.Tech, Mechanical Engineering</strong><br>Guru Nanak Institutions (GNI), 2018 to 2022</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Hiring for ML data operations, data QA, or Computer Vision? Send me a message.</p>
+    <div class="btns">
+      <a class="btn fill" href="mailto:shashikirangoud.ayili@gmail.com">shashikirangoud.ayili@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/ayili">linkedin.com/in/ayili</a>
+    </div>
+  </section>
+  </main>
+
+  <footer>Ayili Shashikiran · Hyderabad, India</footer>
+</div>
+</body>
+</html>
